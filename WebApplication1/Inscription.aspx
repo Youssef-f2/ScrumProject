@@ -5,86 +5,137 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <script src="JavaScript.js" type="text/javascript"></script>
-    <script>    
-        function bad() {
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'le login exist déja!'
-            })
-        }
-        function pass() {
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'mot de passe incorrect!'
-            })
-        }
-    </script>
-     <link rel="stylesheet" href="css/style.css" />
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <style type="text/css">
-        .auto-style1 {
-            right: 934px;
-        }
-    </style>
+     <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+<script src="JavaScript.js" type="text/javascript"></script>
+<script>    
+	function bad() {
+		Swal.fire({
+			icon: 'error',
+			title: 'Oops...',
+			text: 'le login exist déja!'
+		})
+	}
+	function pass() {
+		Swal.fire({
+			icon: 'error',
+			title: 'Oops...',
+			text: 'mot de passe incorrect!'
+		})
+	}
+</script>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-        <div class="main">
+   <div class="limiter">
+		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
+			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+				<div class="login100-form validate-form">
+					<span class="login100-form-title p-b-49">
+						Inscription
+					</span>
 
-        <!-- Sign up form -->
-        <section class="signup">
-            <div class="container">
-                <div class="signup-content">
-                    <div class="signup-form">
-                        <h2 class="form-title">Inscription</h2>
-                        <form class="register-form" id="register-form">
+					<div class="wrap-input100 validate-input m-b-23" >
+						<span class="label-input100">Login</span>
+						<asp:textBox class="input100" required runat="server" type="text" name="login" id="login" placeholder="Login"></asp:textBox>
+						<span class="focus-input100" data-symbol="&#xf206;"></span>
+					</div>
 
-                            <div class="form-group">
-                                <label for="login"><i class="fa fa-user-circle"></i></label>
-                                <asp:textBox runat="server" type="text" required name="login" id="login" placeholder="login"></asp:textBox>
-                            </div>
+					<div class="wrap-input100 validate-input m-b-23">
+						<span class="label-input100">Nom</span>
+						<asp:textBox class="input100" required runat="server" type="text" name="name" id="name" placeholder="Nom"></asp:textBox>
+						<span class="focus-input100" data-symbol="&#xf206;"></span>
+					</div>
 
-                            <div class="form-group">
-                                <label for="name" class="auto-style1"><i class="fa fa-user-circle"></i></label>
-                                <asp:textBox runat="server" type="text" required name="name" id="name" placeholder="nom"></asp:textBox>
-                            </div>
-                            <div class="form-group">
-                                <label for="prénom"><i class="fa fa-user-circle"></i></label>
-                                <asp:textBox runat="server" type="text" required name="prénom" Id="prénom" placeholder="prénom"></asp:textBox>
-                            </div>
-                            <div class="form-group">
-                                <label for="email"><i class="fa fa-envelope"></i></label>
-                                <asp:textBox runat="server" required type="email" name="email" id="email" placeholder="Email"></asp:textBox>
-                            </div>
-                            <div class="form-group">
-                                <label for="pass"><i class="fa fa-address-card"></i></label>
-                                <asp:textBox runat="server" required type="password" name="pass" id="pass" placeholder="Mot de passe"></asp:textBox>
-                            </div>
-                            <div class="form-group">
-                                <label for="re-pass"><i class="fa fa-address-card"></i></label>
-                                <asp:textBox runat="server" required type="password" name="re_pass" Id="re_pass" placeholder="Repéter votre mot de passe"></asp:textBox>
-                            </div>
+					<div class="wrap-input100 validate-input m-b-23" >
+						<span class="label-input100">Prénom</span>
+						<asp:textBox class="input100" required runat="server" type="text" name="prénom" id="prénom" placeholder="Prénom"></asp:textBox>
+						<span class="focus-input100" data-symbol="&#xf206;"></span>
+					</div>
 
-                            
-                            <div class="form-group form-button">
-                                <asp:button runat="server" Id="btn_signup" OnClick="btn_signup_Click" class="form-submit" Text="Register"/>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="signup-image">
-                        <figure><img src="images/logo.png" alt="sing up image"></figure>
-                        <a href="Connexion.aspx" class="signup-image-link">Se Connecter</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+					<div class="wrap-input100 validate-input m-b-23">
+						<span class="label-input100">EMAIL</span>
+						<asp:textBox class="input100" required runat="server" type="email" name="email" id="email" placeholder="Email"></asp:textBox>
+						<span class="focus-input100" data-symbol="&#xf2c2;"></span>
+					</div>
 
-        </div>
-    </div>
+					<div class="wrap-input100 validate-input m-b-23">
+						<span class="label-input100">Mot de Passe</span>
+						<asp:textBox class="input100" required runat="server" type="password" name="pass" id="pass" placeholder="Mot de Passe"></asp:textBox>
+						<span class="focus-input100" data-symbol="&#xf190;"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input">
+						<span class="label-input100">Répeter le Mot de Passe</span>
+						<asp:textBox class="input100" required runat="server"  type="password" name="re_pass" id="re_pass" placeholder="Répeter votre mot de passe"></asp:textBox>
+						<span class="focus-input100" data-symbol="&#xf190;"></span>
+					</div>
+
+					
+					
+					<div class="text-right p-t-8 p-b-31">
+						
+					</div>
+					
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<asp:button class="login100-form-btn" runat="server" Id="btn_signup" OnClick="btn_signup_Click" Text="S'inscrire"/>
+								
+						</div>
+					</div>
+
+					<div class="flex-col-c p-t-155">
+						<a href="Connexion.aspx" class="txt2">
+							 Se Connecter
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+	
+	
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
     </form>
 </body>
 </html>
