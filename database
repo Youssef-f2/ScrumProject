@@ -1,0 +1,10 @@
+create database Base 
+use Base
+
+Create Table Authentification (Log_in varchar(20) not null primary key,Nom varchar(30), Prenom varchar(30), Email varchar(30) , mdp varchar(20) ,privilege int)
+
+Create table Formation( Id int identity(100,1) primary key, Title varchar(20),Short_Description varchar(30),Description varchar(50),image varchar(30),Date_debut date,Date_fin date)
+insert into Authentification values ('Mouad99' , 'MOUKADDI' , 'Mouad' , 'dahbikamal318@gmail.com', 'mouad123',1)
+insert into Authentification values ('Mouad9300' , 'Nid Taleb' , 'Mouad' , 'Mouadnidtaleb@gmail.com', 'mouadbasl',0)
+
+Select * from Authentification where Log_in='Mouad99' and mdp ='mouad123'
